@@ -1,0 +1,14 @@
+[Unit]
+Description=nlsd firewall log aggregator daemon
+After=multi-user.target
+
+[Service]
+WorkingDirectory=/home/nlsd/
+User=nlsd
+ExecStart=/usr/bin/python3 /home/nlsd/nlsd.py
+Type=simple
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
