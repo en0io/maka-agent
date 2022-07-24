@@ -2,6 +2,9 @@
 
 python service for the project maka service (https://s.en0.io)
 
+To get the API key for this, visit https://s.en0.io/account/edit
+
+
 installation script:
 
 ```
