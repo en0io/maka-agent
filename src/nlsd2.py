@@ -4,6 +4,7 @@ print('set ingest server to ' + ingest_server)
 infile = open('/home/nlsd/key', 'r')
 authkey = infile.readline()
 import sys
+from os.path import exists
 import base64
 import requests
 import threading
@@ -29,4 +30,6 @@ def tracksshd():
 
 
 threading.Thread(target=trackufw).start()
-threading.Thread(target=tracksshd).start()
+
+if (exists("/var/log/fail2ban.log")):
+    threading.Thread(target=tracksshd).start()
