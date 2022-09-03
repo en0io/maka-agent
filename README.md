@@ -17,7 +17,7 @@ cp /root/.bashrc /home/nlsd
 cp /etc/skel/.bashrc /home/nlsd/
 cp /etc/skel/.profile /home/nlsd/
 curl -s -X POST https://s.en0.io/api/createReporter -H "Content-Type: application/x-www-form-urlencoded" -d "key=$apikey&hostname=$hostname" | python3 -c "import sys, json; print(json.load(sys.stdin)['message'])" > /home/nlsd/key
-wget https://raw.githubusercontent.com/en0io/maka-agent/main/src/nlsd.py -O /home/nlsd/nlsd.py
+wget https://raw.githubusercontent.com/en0io/maka-agent/main/src/nlsd2.py -O /home/nlsd/nlsd.py
 chmod +x nlsd.py
 chown -R nlsd:nlsd /home/nlsd
 chmod -R 770 /home/nlsd
