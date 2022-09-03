@@ -9,6 +9,7 @@ ExecStart=/usr/bin/python3 /home/nlsd/nlsd.py
 Type=simple
 Restart=always
 RestartSec=3
+RuntimeMaxSec=6h
 
 [Install]
 WantedBy=multi-user.target
