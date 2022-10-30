@@ -17,9 +17,7 @@ hostname=`hostname`
 useradd nlsd
 chsh nlsd -s /bin/bash
 mkdir /home/nlsd/
-cp /root/.bashrc /home/nlsd
-cp /etc/skel/.bashrc /home/nlsd/
-cp /etc/skel/.profile /home/nlsd/
+cp /etc/skel/.bashrc /etc/skel/.profile /home/nlsd/
 curl -s -X POST https://s.en0.io/api/createReporter -H "Content-Type: application/x-www-form-urlencoded" -d "key=$apikey&hostname=$hostname" | python3 -c "import sys, json; print(json.load(sys.stdin)['message'])" > /home/nlsd/key
 wget https://raw.githubusercontent.com/en0io/maka-agent/main/src/nlsd.py -O /home/nlsd/nlsd.py
 chmod +x nlsd.py
@@ -32,5 +30,3 @@ systemctl enable nlsd.service
 systemctl start nlsd.service
 chsh nlsd -s /usr/sbin/nologin
 ```
-
-
