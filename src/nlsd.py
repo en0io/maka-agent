@@ -49,9 +49,13 @@ def tracksshd():
 def main():
     if exists("/var/log/ufw.log"):
         threading.Thread(target=trackufw).start()
+    else:
+        print("ufw log not found")
 
     if exists("/var/log/fail2ban.log"):
         threading.Thread(target=tracksshd).start()
+    else:
+        print("f2b log not found")
 
 
 if __name__ == "__main__":
