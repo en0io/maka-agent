@@ -4,9 +4,13 @@ python service for the project maka service (https://s.en0.io)
 
 To get the API key for this, visit https://s.en0.io/account/edit
 
+## Installation: Docker
+```
+docker build -t nlsd --force-rm .
+docker run -d --restart=always --name nlsd -e AUTHKEY=AUTHKEY -v /var/log:/var/log:ro nlsd
+```
 
-installation script:
-
+## Installation: Host
 ```
 apikey=YOUR_API_KEY_GOES_HERE
 hostname=`hostname`
