@@ -5,7 +5,7 @@ After=multi-user.target
 [Service]
 WorkingDirectory=/home/nlsd/
 User=nlsd
-ExecStart=/usr/bin/python3 /home/nlsd/nlsd.py
+ExecStart=env VIRTUAL_ENV=/home/nlsd/ /home/nlsd/bin/python3 nlsd.py
 Type=simple
 Restart=always
 RestartSec=3
