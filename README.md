@@ -30,3 +30,12 @@ systemctl enable nlsd.service
 systemctl start nlsd.service
 chsh nlsd -s /usr/sbin/nologin
 ```
+
+deb13 fix
+```
+cd /home/nlsd
+python3 -m venv venv
+source venv/bin/activate
+pip install requests
+deactivate
+```
